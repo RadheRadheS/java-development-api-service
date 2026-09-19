@@ -21,5 +21,13 @@ pipeline {
             }
         }
 
+        stage('Deploy to Tomcat') {
+            steps {
+                bat '''
+                    copy /Y "target\\employee-management.war" "C:\\Users\\SiriGoud\\Downloads\\apache-tomcat-10.1.59-windows-x64\\apache-tomcat-10.1.59\\webapps\\employee-management.war"
+                '''
+            }
+        }
+
     }
 }
